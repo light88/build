@@ -35,6 +35,21 @@ task a {
     }
 }
 
+task copyTomcat(dependsOn : build, type: Copy) {
+    
+    //from configurations.compile
+    from "${buildDir}\\libs"
+    into file('c:\\dev\\srv\\apache-tomcat-8.0.8\\webapps')
+    include '*.jar'
+    
+}
+
+task b << {
+    println configurations
+    println configurations.compile.class
+    
+}
+
 
 repositories {
     mavenCentral()
