@@ -1,0 +1,29 @@
+apply plugin: 'java'
+
+task a {
+    println 'aaaas'
+    
+    def i = 0
+    doFirst { task ->
+        println "doFirst ${task.name} ${++i}"
+    }
+    
+    doLast {
+        println "doLast ${it}"
+        println project.toString()
+        println buildFile
+        println gradle
+        println status
+        println version
+        println projects
+        println fn
+        
+        
+        logger.info('logger output...')
+    }
+}
+
+
+dependencies {
+runtime('org.hibernate:hibernate:3.0.5')
+}
