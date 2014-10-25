@@ -1,4 +1,15 @@
-apply plugin: 'java'
+//apply plugin: 'java'
+
+apply plugin : 'groovy'
+
+sourceSets {
+    main {
+        groovy{
+            srcDirs = ['src']
+        }
+    }
+}
+
 
 task a {
     println 'aaaas'
@@ -24,6 +35,14 @@ task a {
     }
 }
 
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'org.codehaus.groovy:groovy-all:2.3.6'
+}
 
 dependencies {
 runtime('org.hibernate:hibernate:3.0.5')
