@@ -17,6 +17,7 @@ task a {
         println version
         println projects
         println fn
+        println "UPDATE : ${update}"
         
         
         logger.info('logger output...')
